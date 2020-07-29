@@ -10,7 +10,7 @@ try:
 	from tkinter import scrolledtext
 	from tkinter import ttk
 except ImportError:
-	print("Uh oh. It appears that you don't have tkinter installer to install it run \"sudo apt install python3-tk\" on linux and on windows re-run the installer and be sure that the \"Tcl/Tk\" option is enabled")
+	print("Uh oh. It appears that you don't have tkinter installer to install it run \"sudo apt install python3-tk\" on linux and on windows re-run the installer and be sure that the \"Tcl/Tk\" option is enabled on mac you can try to execute \"brew install tcl-tk\"")
 	sys.exit(1)
 
 try:
@@ -20,6 +20,7 @@ except ImportError:
 	try:
 		subprocess.check_call([sys.executable, "-m", "pip", "install", "pyperclip"])
 	except Exception:
+		print("The auto installation failed please find a suitable way to install the pyperclip module for this python version")
 		sys.exit(1)
 
 class PythonConverter:
